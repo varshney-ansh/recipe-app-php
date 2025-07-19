@@ -1,0 +1,15 @@
+@import "tailwindcss";
+
+@import "./css/fonts.css";
+
+
+@theme{
+    --font-qurova: 'Qurova', sans-serif;
+    --font-kinds-sans: 'Kinds Sans', sans-serif;
+}
+
+@layer base{
+    body{
+        @apply font-kinds-sans;
+    }
+}
