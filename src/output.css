@@ -14,6 +14,8 @@
     --default-mono-font-family: var(--font-mono);
     --font-qurova: 'Qurova', sans-serif;
     --font-kinds-sans: 'Kinds Sans', sans-serif;
+    --color-text-sky: #6de6f8;
+    --color-text-rich-navy: #000f1d;
   }
 }
 @layer base {
@@ -175,6 +177,12 @@
   .font-bold {
     --tw-font-weight: var(--font-weight-bold);
     font-weight: var(--font-weight-bold);
+  }
+  .text-text-rich-navy {
+    color: var(--color-text-rich-navy);
+  }
+  .text-text-sky {
+    color: var(--color-text-sky);
   }
 }
 @font-face {

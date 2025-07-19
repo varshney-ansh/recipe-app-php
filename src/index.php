@@ -7,6 +7,6 @@
     <link rel="stylesheet" href="./output.css">
 </head>
 <body>
-    <h1 class="font-bold text-center text-3xl font-qurova">tasteai</h1>
+    <h1 class="font-bold text-center text-3xl font-qurova text-text-sky">tasteai</h1>
 </body>
 </html>

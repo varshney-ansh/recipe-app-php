@@ -3,13 +3,54 @@
 @import "./css/fonts.css";
 
 
-@theme{
+@theme {
     --font-qurova: 'Qurova', sans-serif;
     --font-kinds-sans: 'Kinds Sans', sans-serif;
+
+    /* Colors for background */
+    --color-bg-white: #fff;
+    --color-bg-white-smoke: #f7f7f7;
+    --color-bg-lemon: #fffc4d;
+    --color-bg-linen: #f2eee4;
+    --color-bg-lime: #beff4d;
+    --color-bg-grey: #dfdfdf;
+    --color-bg-golden: #ffd731;
+    --color-bg-perl: #e9ccff;
+    --color-bg-sky: #6de6f8;
+    --color-bg-lavender: #dbcdeb;
+    --color-bg-orange: #f79f4d;
+    --color-bg-deep-sky: #00bfff;
+    --color-bg-pink: #ff6ada;
+    --color-bg-orange-peel: #ff7a00;
+    --color-bg-azure: #4da2ff;
+    --color-bg-purple: #5c4ade;
+    --color-bg-green-dark: #3e512f;
+    --color-bg-charcoal: #31404e;
+    --color-bg-rich-navy: #000f1d;
+
+    /* Colors for text */
+    --color-text-white: #f7f7f7;
+    --color-text-green: #4df766;
+    --color-text-sky: #6de6f8;
+    --color-text-mint: #55db9c;
+    --color-text-cyan: #00bfff;
+    --color-text-tint-blue: #4da2ff;
+    --color-text-slate-grey: #7c838a;
+    --color-text-charcoal: #61686d;
+    --color-text-black: #000;
+    --color-text-rich-navy: #000f1d;
+
+    /* Colors for borders */
+    --color-border-grey: #cccccc;
+    --color-border-silver: #bbbec0;
+    --color-border-slate: #7c838a;
+    --color-border-steel: #31404e;
+    --color-border-rich-navy: #000f1d;
+
 }
 
-@layer base{
-    body{
+@layer base {
+    body {
         @apply font-kinds-sans;
     }
 }
