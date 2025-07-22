@@ -1,6 +1,9 @@
 @import "tailwindcss";
 
 @import "./css/fonts.css";
+@source "./**/*.php";
+
+
 
 
 @theme {
