@@ -52,8 +52,21 @@
 
 }
 
+
 @layer base {
     body {
         @apply font-kinds-sans;
+        @apply list-disc list-inside;
+    }
+
+    ul{
+        @apply list-disc list-inside;
+        list-style-type: disc;
+        list-style: disc;
+    }
+
+    ol{
+        list-style-type: decimal;
+        list-style: decimal ;
     }
 }

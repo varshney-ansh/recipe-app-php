@@ -13,7 +13,7 @@
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,1,0" />
 </head>
 
-<body class="h-screen bg-amber-700">
+<body class="h-screen ">
     <div class="flex-row flex items-center bg-bg-white-smoke min-h-screen w-full">
         <!-- sidebar  -->
         <div
@@ -43,34 +43,15 @@
             <div class="max-w-2xl w-full mx-auto flex-col flex justify-between h-[90vh] max-sm:80vh">
                 <!-- message  -->
                 <div class="pt-4  flex flex-col gap-8 px-4  h-[75vh] sm:h-[70vh] overflow-y-auto overflow-x-hidden">
-                    <div class="flex flex-col gap-2.5">
-                        <!-- user message  -->
-                        <div
-                            class="py-2 px-4 ml-auto rounded-tl-2xl rounded-bl-2xl rounded-br-2xl text-right max-w-fit bg-bg-grey">
-                            <span>
-                                What is it??
-                            </span>
-                        </div>
-
-                        <!-- ai message  -->
-                        <div class="flex flex-col gap-3 w-full">
-                            <div class="">
-                                <img src="./star.png" alt="taste_ai" class="w-4 ml-[-16px]">
-                                <span class="material-symbols-rounded">
-                                    more_vert
-                                </span>
-                            </div>
-                            <div class="mt-[-24px] px-2">
-                                This is Ai Message
-                            </div>
-                        </div>
+                    <div id="chat" class="flex flex-col gap-2.5 list-disc">
+                        
                     </div>
 
                 </div>
                 <div class="sm:mb-7 mx-4 mb-2 ">
-                    <form action="#">
+                    <form id="chat-form">
                         <div class="border-2 p-4 rounded-xl border-border-grey border-solid max-w-xl w-full mx-auto">
-                            <input type="text" placeholder="Ask Taste"
+                            <input type="text" id="prompt" placeholder="Ask TasteAi"
                                 class="w-full outline-none text-lg placeholder:text-18">
                             <!-- options  -->
                             <div class="flex items-center justify-between mt-2">
@@ -89,7 +70,7 @@
                                     </span>
                                 </div>
                                 <div>
-                                    <span
+                                    <span id="subspan"
                                         class="material-symbols-rounded text-text-slate-grey p-2 rounded-[50%] hover:bg-bg-rich-navy hover:text-text-white">
                                         send
                                     </span>
@@ -101,6 +82,8 @@
             </div>
         </div>
     </div>
+
+    <script type="module" src="./index.js"></script>
 </body>
 
 </html>
