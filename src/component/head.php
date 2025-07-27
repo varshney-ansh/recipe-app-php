@@ -8,6 +8,7 @@ class Head{
             <title><?php echo $title; ?></title>
             <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
             rel="stylesheet">
+             <link rel="icon" type="image/x-icon" href="./logob.png">
         <?php
     }
 }

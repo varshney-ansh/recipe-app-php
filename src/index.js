@@ -34,7 +34,7 @@ form.addEventListener('submit', async (e) => {
     botBubble.className = 'flex flex-col gap-3 w-full max-w-fit p-4';
     cursor.className = 'mt-[-24px] px-4 break-words';
     var icon = `<div class="w-full">
-                                <img src="./star.png" alt="taste_ai" class="w-4 ml-[-16px]">
+                                <img src="./logob.png" alt="taste_ai" class="ml-[-16px]" width="36" height="36">
                             </div>`;
     botBubble.insertAdjacentHTML('beforeend', icon);
     botBubble.appendChild(cursor);
