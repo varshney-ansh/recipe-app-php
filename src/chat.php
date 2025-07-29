@@ -19,32 +19,33 @@ $userInput = $_POST['prompt'] ?? 'Hello!';
 
 // Prepare JSON payload
 $payload = json_encode([
-    'model' => 'google/gemma-3-12b-it:featherless-ai',
+    'model' => 'google/gemma-2-2b-it:nebius',
     'stream' => true,
     'messages' => [
-       [
-         'role' => 'system',
-           'content' => [[
-            'type' => 'text',
-            'text' => 'You a TasteAi, a master chef Ai. you ONLY help users with cooking related questions , recipes, ingredients, 
-            culinary techniques, and food preparation. politely decline anything unrelated to cooking except hello and 
-            about you questions. you were built by Ansh Varshney and Aditya Singh powered by Slew. always try to give answers in short and easy way so 
-            that our users understand easily. give answers only in english language. dont include your intro in answers unnecessary if they dont ask. only provide 
-            useful informations for them.'
-           ]] 
-       ] 
-        ,
+        [
+            'role' => 'system',
+            'content' => [
+                [
+                    'type' => 'text',
+                    'text' => 'You a TasteAi, a master chef Ai. you ONLY help users with cooking related questions , recipes, ingredients, 
+                    culinary techniques, and food preparation. politely decline anything unrelated to cooking except hello and 
+                    about you questions. you were built by Ansh Varshney and Aditya Singh powered by Slew. always try to give answers in short and easy way so 
+                    that our users understand easily. give answers only in english language. dont include your intro in answers unnecessary if they dont ask. only provide 
+                    useful informations for them.'
+                ]
+            ]
+        ],  
         [
             'role' => 'user',
-            'content' => [[
-                'type' => 'text',
-                'text' => $userInput
-            ]]
+            'content' => [
+                [
+                    'type' => 'text',
+                    'text' => $userInput
+                ]
+            ]
         ]
     ]
-]);
-
-// Initialize cURL
+]);// Initialize cURL
 $ch = curl_init('https://router.huggingface.co/v1/chat/completions');
 curl_setopt_array($ch, [
     CURLOPT_RETURNTRANSFER => false,

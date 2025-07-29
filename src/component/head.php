@@ -9,6 +9,7 @@ class Head{
             <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
             rel="stylesheet">
              <link rel="icon" type="image/x-icon" href="./logob.png">
+             <link rel="icon" href="https://www.gstatic.com/lamda/images/gemini_sparkle_aurora_33f86dc0c0257da337c63.svg" sizes="any" type="image/svg+xml">
         <?php
     }
 }

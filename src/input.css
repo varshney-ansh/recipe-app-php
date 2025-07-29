@@ -1,14 +1,15 @@
 @import "tailwindcss";
 
-@import "./css/fonts.css";
+/* @import "./css/fonts.css"; */
 @source "./**/*.php";
 
+/* @import url(https://db.onlinewebfonts.com/c/359daf377c374b65e821b9f218fc91ef?family=Google+Sans+Flex); */
 
-
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
 
 @theme {
-    --font-qurova: 'Qurova', sans-serif;
-    --font-kinds-sans: 'Kinds Sans', sans-serif;
+    --font-qurova: 'Open Sans', sans-serif;
+    --font-kinds-sans: 'Open Sans', sans-serif;
 
     /* Colors for background */
     --color-bg-white: #fff;
@@ -53,6 +54,7 @@
 }
 
 
+
 @layer base {
     body {
         @apply font-kinds-sans;
@@ -68,5 +70,14 @@
     ol{
         list-style-type: decimal;
         list-style: decimal ;
+    }
+
+    #message-container::-webkit-scrollbar{
+        display: none;
+    }
+
+    #message-container {
+        scrollbar-width: none; /* Firefox */
+        -ms-overflow-style: none; /* Internet Explorer and Edge */
     }
 }
