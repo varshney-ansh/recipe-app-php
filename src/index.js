@@ -5,8 +5,8 @@ const form = document.getElementById('chat-form');
 const promptinput = document.getElementById('prompt');
 
 const subspan = document.getElementById('subspan');
+let messages = JSON.parse(localStorage.getItem('chat_messages')) || [];
 
-// subspan.addEventListener("click", form.submit());
 document.addEventListener("DOMContentLoaded", function () {
     subspan.addEventListener("click", () => {
         form.dispatchEvent(new Event('submit', { bubbles: true, cancelable: true }))
@@ -25,6 +25,12 @@ form.addEventListener('submit', async (e) => {
     if (wlc) {
         wlc.remove();
     }
+
+    messages.push({
+        role: 'user',
+        content: usertext
+    });
+
     const usermessage = document.createElement('div');
     usermessage.className = "py-3 px-4 ml-auto rounded-tl-2xl rounded-bl-2xl rounded-br-2xl text-right max-w-fit bg-bg-grey";
     usermessage.textContent = usertext;
@@ -135,8 +141,8 @@ form.addEventListener('submit', async (e) => {
 
     const response = await fetch('chat.php', {
         method: "POST",
-        headers: { 'Content-type': 'application/x-www-form-urlencoded' },
-        body: new URLSearchParams({ prompt: usertext }),
+        headers: { 'Content-type': 'application/x-www-form-urlencoded', 'X-Bearer-Token': 'Ansh by Slew' },
+        body: new URLSearchParams({ prompt: usertext, chat_history: JSON.stringify(messages.slice(-10)) }),
     })
 
     const reader = response.body.getReader();
@@ -180,6 +186,10 @@ form.addEventListener('submit', async (e) => {
     // const optionss = document.getElementById('options');
     optionsDiv.classList.remove('opacity-0');
     optionsDiv.classList.add('opacity-100');
-})();
+    messages.push({
+        role: 'assistant',
+        content: document.getElementById(`${usertext + rand}`).textContent
+    });
+    localStorage.setItem('chat_messages', JSON.stringify(messages));
 
-
+});

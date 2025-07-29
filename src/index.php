@@ -8,6 +8,29 @@ $publicPaths = [
     '/index.php/ap/logout'
 ];
 
+
+switch ($uri) {
+    case '/index.php/ap/signin':
+        $title = 'Sign In - TasteAi';
+        break;
+    case '/index.php/ap/verify':
+        $title = 'Verify Account - TasteAi';
+        break;
+    case '/index.php/ap/logout':
+        $title = 'Logging Out - TasteAi';
+        break;
+    case '/index.php/settings':
+        $title = 'Settings - TasteAi';
+        break;
+    case '/index.php/activities':
+        $title = 'Activities - TasteAi';
+        break;
+    default:
+        $title = 'TasteAi';
+        break;
+}
+
+
 // If user not logged in AND not on a public page → redirect
 if (!isset($_SESSION['user']) && !in_array($uri, $publicPaths)) {
     header('Location: /index.php/ap/signin');
@@ -20,21 +43,7 @@ if (!isset($_SESSION['user']) && !in_array($uri, $publicPaths)) {
 <html lang="en">
 
 <head>
-    <?php include './component/head.php'; echo $title = Head::render(); ?>
-    <link rel="stylesheet" href="/output.css">
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>
-        <?php echo $title; ?>
-    </title>
-    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
-    <link rel="stylesheet"
-        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,0,0" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
-        rel="stylesheet">
-
+    <?php include './component/head.php'; echo $title = Head::render($title . ' | Powered by Slew'); ?>
 </head>
 
 
@@ -64,7 +73,7 @@ if (!isset($_SESSION['user']) && !in_array($uri, $publicPaths)) {
                         <span class="material-symbols-rounded p-2 rounded-[50%] ">
                             add
                         </span>
-                        <span onclick="location.href='/'"
+                        <span onclick="localStorage.setItem('chat_messages', JSON.stringify([]));location.href='/'"
                             class="text-[14px] ">New Chat</span>
                     </div>
                 </div>
@@ -89,6 +98,7 @@ if (!isset($_SESSION['user']) && !in_array($uri, $publicPaths)) {
             </div>
         </div>
         <?php if($_SERVER['REQUEST_URI'] == '/index.php/settings') : include './component/settings.php'; ?>
+        <?php elseif($_SERVER['REQUEST_URI'] == '/index.php/activities') : include './component/activities.php'; ?>
         <?php else: ?>
         <!-- main content -->
         <div class="h-screen bg-bg-white-smoke w-full ">
@@ -157,6 +167,7 @@ if (!isset($_SESSION['user']) && !in_array($uri, $publicPaths)) {
             </div>
         </div>
         <script type="module" src="/index.js"></script>
+        
 
         <?php endif; ?>
     </div>

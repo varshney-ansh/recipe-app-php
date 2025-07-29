@@ -32,7 +32,7 @@ $url = $client->createAuthUrl();
     <div class="w-full max-w-md bg-white rounded-lg shadow-lg border border-gray-200">
         <!-- Header -->
         <div class="text-center space-y-2 pt-8 px-8">
-            <h1 class="text-2xl font-bold text-gray-900">Welcome back</h1>
+            <h1 class="text-2xl font-bold text-gray-900">Welcome back to TasteAi</h1>
             <p class="text-gray-600">Sign in to your account to continue</p>
         </div>
 

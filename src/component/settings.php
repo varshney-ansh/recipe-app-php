@@ -1,17 +1,5 @@
 <div class="h-screen bg-bg-white-smoke w-full">
     <style>
-        /* Custom file upload styles */
-        .file-upload {
-            position: relative;
-            overflow: hidden;
-            display: inline-block;
-        }
-
-        .file-upload input[type=file] {
-            position: absolute;
-            left: -9999px;
-        }
-
         /* Toggle switch styles */
         .toggle-switch {
             position: relative;
@@ -77,7 +65,7 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center py-4">
                 <div class="flex items-center">
-                    <button id="backBtn" class="mr-4 p-2 hover:bg-gray-100 rounded-md">
+                    <button id="backBtn" onclick="location.href='/'" class="mr-4 p-2 hover:bg-gray-100 rounded-md">
                         <i data-lucide="arrow-left" class="w-5 h-5"></i>
                     </button>
                     <h1 class="text-2xl font-bold text-gray-900">Profile Settings</h1>
@@ -690,20 +678,7 @@
             alert('Profile settings saved successfully!');
         });
 
-        // Delete account
-        document.getElementById('deleteAccountBtn').addEventListener('click', () => {
-            const confirmation = prompt('Type "DELETE" to confirm account deletion:');
-            if (confirmation === 'DELETE') {
-                alert('Account deletion initiated. You will receive a confirmation email.');
-            } else if (confirmation !== null) {
-                alert('Account deletion cancelled. Please type "DELETE" exactly to confirm.');
-            }
-        });
-
-        // Back button
-        document.getElementById('backBtn').addEventListener('click', () => {
-            window.history.back();
-        });
+        
 
         // Load saved settings on page load
         window.addEventListener('load', () => {
